@@ -45,7 +45,11 @@ class HotelController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $hotel = Hotel::find($id);
+        if (!$hotel) {
+            return abort(404);
+        }
+        return view('hotels.edit', compact('hotel'));
     }
 
     /**
@@ -53,7 +57,22 @@ class HotelController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $hotel = Hotel::find($id);
+        if (!$hotel) {
+            return abort(404);
+        }
+
+        $request->validate([
+            'nama_hotel' => 'required|string|max:255',
+            'alamat' => 'required|string',
+            'kota' => 'required|string|max:255',
+            'bintang' => 'required|integer|min:1|max:5',
+            'deskripsi' => 'nullable|string',
+        ]);
+
+        $hotel->update($request->all());
+        return redirect()->route('hotels.index')
+                        ->with('success', 'Hotel berhasil diubah');
     }
 
     /**
