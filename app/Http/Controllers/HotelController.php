@@ -80,6 +80,10 @@ class HotelController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $hotel = Hotel::findOrFail($id);
+        $hotel->delete();
+
+        return redirect()->route('hotels.index')
+            ->with('success', 'Hotel berhasil dihapus.');
     }
 }
