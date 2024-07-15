@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kamars', function (Blueprint $table) {
             $table->id();
             $table->foreignId('hotel_id')->constrained()->onDelete('cascade');
+            $table->integer('nomor_kamar');
             $table->string('tipe_kamar');
             $table->decimal('harga', 10, 2);
             $table->integer('kapasitas');

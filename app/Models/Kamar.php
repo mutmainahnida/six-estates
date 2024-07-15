@@ -9,7 +9,7 @@ class Kamar extends Model
 {
     use HasFactory;
     use HasFactory;
-    protected $fillable = ['hotel_id', 'tipe_kamar', 'harga', 'kapasitas', 'deskripsi'];
+    protected $fillable = ['hotel_id', 'nomor_kamar', 'tipe_kamar', 'harga', 'deskripsi'];
 
     public function hotel()
     {

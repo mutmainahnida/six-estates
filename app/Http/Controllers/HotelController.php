@@ -21,7 +21,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        //
+        return view('hotels.create');
     }
 
     /**
@@ -29,7 +29,17 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_hotel' => 'required|max:255',
+            'alamat' => 'required',
+            'kota' => 'required|max:255',
+            'bintang' => 'required|integer|min:1|max:5',
+            'deskripsi' => 'nullable',
+        ]);
+
+        Hotel::create($validatedData , $request->all());
+
+        return redirect()->route('hotels.index')->with('success', 'Hotel berhasil ditambahkan');
     }
 
     /**
@@ -37,7 +47,11 @@ class HotelController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $hotel = Hotel::find($id); // Mencari hotel berdasarkan ID
+        if (!$hotel) {
+        return abort(404);
+        }
+        return view('hotels.show', compact('hotel'));
     }
 
     /**
