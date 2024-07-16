@@ -15,8 +15,15 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $bookings = Booking::with('user', 'kamar')->get()->map(function ($booking) {
+        $booking->tanggal_check_in = Carbon::parse($booking->tanggal_check_in);
+        $booking->tanggal_check_out = Carbon::parse($booking->tanggal_check_out);
+        return $booking;
+    });
+
+    return view('bookings.index', compact('bookings'));
+
+}
 
     /**
      * Show the form for creating a new resource.
@@ -92,6 +99,9 @@ class BookingController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+        $booking->delete();
+      
+        return redirect()->route('bookings.index')->with('success', 'Booking berhasil dihapus!');
     }
 }
