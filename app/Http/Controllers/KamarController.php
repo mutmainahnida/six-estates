@@ -22,7 +22,8 @@ class KamarController extends Controller
      */
     public function create()
     {
-       //
+        $hotels = Hotel::all();
+        return view('kamars.create', compact('hotels'));
     }
 
     /**
@@ -30,7 +31,19 @@ class KamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'hotel_id' => 'required|exists:hotels,id',
+            'nomor_kamar' => 'required|string|max:255',
+            'tipe_kamar' => 'required|string|max:255',
+            'harga' => 'required|numeric',
+            'kapasitas' => 'required|integer',
+            'deskripsi' => 'required|string',
+        ]);
+
+        Kamar::create($request->all());
+
+        return redirect()->route('kamars.index')
+                         ->with('success', 'Kamar berhasil ditambahkan.');
     }
 
     /**
