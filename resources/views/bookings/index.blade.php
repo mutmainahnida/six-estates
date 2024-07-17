@@ -26,31 +26,27 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($bookings as $booking)
-            <tr>
-                <td>{{ $booking->user->nama ?? 'Tidak diketahui' }}</td>
-                <td>{{ $booking->hotel->nama_hotel ?? 'Tidak diketahui' }}</td>
-                <td>{{ $booking->kamar->tipe_kamar }}</td>
-                <td>{{ $booking->tanggal_check_in->format('d F Y') }}</td>
-                <td>{{ $booking->tanggal_check_out->format('d F Y') }}</td>
-                <td>{{ number_format($booking->total_harga, 2, ',', '.') }}</td>
-                <td>{{ $booking->status }}</td>
-                <td>
-                    <a href="{{ route('bookings.show', $booking->id) }}" class="btn btn-info btn-sm">Detail</a>
-                    @can('update bookings') <a href="{{ route('bookings.edit', $booking->id) }}"
-                        class="btn btn-primary btn-sm">Edit</a>
-                    @endcan
-                    @can('delete bookings') <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST"
-                        style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm"
-                            onclick="return confirm('Apakah Anda yakin ingin menghapus booking ini?')">Hapus</button>
-                    </form>
-                    @endcan
-                </td>
-            </tr>
-            @endforeach
+             @foreach ($bookings as $booking)
+                    <tr>
+                        <td>{{ $booking->user->nama ?? 'Tidak diketahui' }}</td>
+                        <td>{{ $booking->hotel->nama_hotel ?? 'Tidak diketahui' }}</td>
+                        <td>{{ $booking->kamar->tipe_kamar }}</td>
+                        <td>{{ $booking->tanggal_check_in->format('d F Y') }}</td>
+                        <td>{{ $booking->tanggal_check_out->format('d F Y') }}</td>
+                        <td>{{ number_format($booking->total_harga, 2, ',', '.') }}</td>
+                        <td>{{ $booking->status }}</td>
+                        <td>
+                            <a href="{{ route('bookings.show', $booking->id) }}" class="btn btn-info btn-sm">Detail</a>
+                            <a href="{{ route('bookings.edit', $booking->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Apakah Anda yakin ingin menghapus booking ini?')">Hapus</button>
+                            </form>
+                        </td>
+                    </tr>
+             @endforeach
         </tbody>
     </table>
 </div>

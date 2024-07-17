@@ -29,7 +29,7 @@
             <select name="kamar_id" id="kamar_id" class="form-control" required>
                 <option value="">Pilih Kamar</option>
                 @foreach($kamars as $kamar)
-                    <option value="{{ $kamar->id }}">{{ $kamar->tipe_kamar }}</option>
+                    <option value="{{ $kamar->id }}" data-harga="{{ $kamar->harga }}">{{ $kamar->tipe_kamar }}</option>
                 @endforeach
             </select>
         </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             <label for="total_harga">Total Harga (Rp)</label>
-            <input type="number" name="total_harga" id="total_harga" class="form-control" required>
+            <input type="number" name="total_harga" id="total_harga" class="form-control" readonly>
         </div>
         <div class="form-group">
             <label for="status">Status</label>
@@ -56,4 +56,30 @@
         <button type="submit" class="btn btn-success">Tambah Booking</button>
     </form>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tanggalCheckIn = document.getElementById('tanggal_check_in');
+        const tanggalCheckOut = document.getElementById('tanggal_check_out');
+        const kamarSelect = document.getElementById('kamar_id');
+        const totalHargaInput = document.getElementById('total_harga');
+
+        function calculateTotalHarga() {
+            const checkInDate = new Date(tanggalCheckIn.value);
+            const checkOutDate = new Date(tanggalCheckOut.value);
+            const hargaPerHari = kamarSelect.options[kamarSelect.selectedIndex].getAttribute('data-harga');
+
+            if (checkInDate && checkOutDate && hargaPerHari) {
+                const timeDiff = Math.abs(checkOutDate - checkInDate);
+                const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                const totalHarga = daysDiff * hargaPerHari;
+                totalHargaInput.value = totalHarga;
+            }
+        }
+
+        tanggalCheckIn.addEventListener('change', calculateTotalHarga);
+        tanggalCheckOut.addEventListener('change', calculateTotalHarga);
+        kamarSelect.addEventListener('change', calculateTotalHarga);
+    });
+</script>
 @endsection

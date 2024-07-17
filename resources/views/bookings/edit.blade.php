@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="total_harga">Total Harga:</label>
-            <input type="number" name="total_harga" id="total_harga" class="form-control" value="{{ $booking->total_harga }}" required>
+            <input type="number" name="total_harga" id="total_harga" class="form-control" value="{{ $booking->total_harga }}" readonly>
         </div>
         <div class="form-group">
             <label for="status">Status:</label>
