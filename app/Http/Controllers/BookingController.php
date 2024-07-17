@@ -31,7 +31,10 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        $hotels = Hotel::all();
+        $kamars = Kamar::all();
+        return view('bookings.create', compact('users', 'hotels' , 'kamars'));
     }
 
     /**
@@ -39,7 +42,20 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-       //
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            'hotel_id' => 'required|exists:hotels,id',
+            'kamar_id' => 'required|exists:kamars,id',
+            'tanggal_check_in' => 'required|date',
+            'tanggal_check_out' => 'required|date',
+            'total_harga' => 'required|numeric',
+            'status' => 'required|string',
+        ]);
+
+        Booking::create($request->all());
+
+        return redirect()->route('bookings.index')
+                         ->with('success', 'Booking berhasil ditambahkan.');
     }
 
     /**
