@@ -16,6 +16,7 @@
                             <tr>
                                 <th>Nama</th>
                                 <th>Email</th>
+                                <th>Role</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -24,15 +25,13 @@
                             <tr>
                                 <td>{{ $user->nama }}</td>
                                 <td>{{ $user->email }}</td>
-                                {{-- <td>{{ $user->roles ? $user->roles->name : 'N/A' }}</td> --}}
+                                <td>{{ $user->role ?? 'user' }}</td> <!-- Menampilkan role -->
                                 <td>
                                     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Edit</a>
-                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST"
-                                        style="display: inline-block;">
+                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
                                     </form>
                                 </td>
                             </tr>
