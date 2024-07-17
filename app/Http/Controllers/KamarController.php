@@ -22,7 +22,7 @@ class KamarController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Hotel;
 use App\Models\Kamar;
 use App\Models\User;
 use Carbon\Carbon;
@@ -15,7 +16,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::with('user', 'kamar')->get()->map(function ($booking) {
+        $bookings = Booking::with('user', 'hotel' , 'kamar')->get()->map(function ($booking) {
         $booking->tanggal_check_in = Carbon::parse($booking->tanggal_check_in);
         $booking->tanggal_check_out = Carbon::parse($booking->tanggal_check_out);
         return $booking;
@@ -38,7 +39,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //
     }
 
     /**
@@ -54,9 +55,10 @@ class BookingController extends Controller
      */
     public function edit(string $id)
     {
-        $booking = Booking::with('user', 'kamar')->findOrFail($id); // Eager load user and kamar data
-        $users = User::all(); // Get all users
-        $kamars = Kamar::all(); // Get all kamars
+        $booking = Booking::with('user', 'hotel' , 'kamar')->findOrFail($id); 
+        $users = User::all();
+        $hotels = Hotel::all();
+        $kamars = Kamar::all();
         return view('bookings.edit', compact('booking', 'users', 'kamars'));
     }
 
@@ -67,6 +69,7 @@ class BookingController extends Controller
     {
         $request->validate([
             'user_id' => 'required|integer|exists:users,id',
+            'hotel_id' => 'required|integer|exists:hotels,id',
             'kamar_id' => 'required|integer|exists:kamars,id',
             'tanggal_check_in' => 'required|date|after:today',  
             'tanggal_check_out' => 'required|date|after:tanggal_check_in',
@@ -85,6 +88,7 @@ class BookingController extends Controller
   
           $booking->update([
               'user_id' => $request->user_id,
+              'hotel_id' => $request->hotel_id,
               'kamar_id' => $request->kamar_id,
               'tanggal_check_in' => $tanggal_check_in,
               'tanggal_check_out' => $tanggal_check_out,

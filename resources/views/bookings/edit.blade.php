@@ -7,11 +7,15 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label for="user_id">User ID:</label>
+            <label for="user_id">User:</label>
             <input type="number" name="user_id" id="user_id" class="form-control" value="{{ $booking->user_id }}" required>
         </div>
         <div class="form-group">
-            <label for="kamar_id">Kamar ID:</label>
+            <label for="hotel_id">Hotel:</label>
+            <input type="number" name="hotel_id" id="hotel_id" class="form-control" value="{{ $booking->hotel_id }}" required>
+        </div>
+        <div class="form-group">
+            <label for="kamar_id">Kamar:</label>
             <input type="number" name="kamar_id" id="kamar_id" class="form-control" value="{{ $booking->kamar_id }}" required>
         </div>
         <div class="form-group">

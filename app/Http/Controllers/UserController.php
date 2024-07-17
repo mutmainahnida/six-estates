@@ -60,20 +60,14 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users,email,' . $id,
             'password' => 'nullable|string|min:8|confirmed',
             'role' => 'required|in:admin,staff,customer'
         ]);
 
         $user = User::findOrFail($id);
-
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->has('password') ? Hash::make($request->password) : $user->password,
-            'role' => $request->role,
-        ]);
+        $user->update($request->only('name', 'email'));
 
         return redirect()->route('users.index')->with('success', 'User berhasil diubah!');
     }

@@ -16,6 +16,7 @@
         <thead>
             <tr>
                 <th>User</th>
+                <th>Hotel</th>
                 <th>Kamar</th>
                 <th>Tanggal Check-In</th>
                 <th>Tanggal Check-Out</th>
@@ -28,6 +29,7 @@
             @foreach ($bookings as $booking)
             <tr>
                 <td>{{ $booking->user->nama ?? 'Tidak diketahui' }}</td>
+                <td>{{ $booking->hotel->nama_hotel ?? 'Tidak diketahui' }}</td>
                 <td>{{ $booking->kamar->tipe_kamar }}</td>
                 <td>{{ $booking->tanggal_check_in->format('d F Y') }}</td>
                 <td>{{ $booking->tanggal_check_out->format('d F Y') }}</td>

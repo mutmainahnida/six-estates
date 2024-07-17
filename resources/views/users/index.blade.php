@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                     <div class="mb-3">
-                        <a href="{{ route('user.create') }}" class="btn btn-success">Tambah User</a>
+                        <a href="{{ route('users.create') }}" class="btn btn-primary">Tambah User</a>
                     </div>
                     <table class="table">
                         <thead>
@@ -22,12 +22,12 @@
                         <tbody>
                             @foreach ($users as $user)
                             <tr>
-                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->nama }}</td>
                                 <td>{{ $user->email }}</td>
                                 {{-- <td>{{ $user->roles ? $user->roles->name : 'N/A' }}</td> --}}
                                 <td>
-                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-primary">Edit</a>
-                                    <form action="{{ route('user.destroy', $user->id) }}" method="POST"
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Edit</a>
+                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST"
                                         style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')

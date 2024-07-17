@@ -14,15 +14,11 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::firstOrCreate(
-            ['email' => 'admin@example.com'],
-            ['name' => 'Admin User', 'password' => Hash::make('password123')]
-        );
 
         for ($i = 1; $i <= 10; $i++) {
             User::firstOrCreate(
                 ['email' => "user$i@example.com"],
-                ['name' => "User $i", 'password' => Hash::make('password123')]
+                ['nama' => "User $i", 'password' => Hash::make('password123')]
             );
         }
     }
