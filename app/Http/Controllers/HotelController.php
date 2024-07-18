@@ -85,8 +85,7 @@ class HotelController extends Controller
         ]);
 
         $hotel->update($request->all());
-        return redirect()->route('hotels.index')
-                        ->with('success', 'Hotel berhasil diubah');
+        return redirect()->route('hotels.index')->with('success', 'Hotel berhasil diubah');
     }
 
     /**

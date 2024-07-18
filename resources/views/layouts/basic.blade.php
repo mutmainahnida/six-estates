@@ -458,6 +458,10 @@
                         </div>
                     </div>
 
+                    {{-- view hotel index --}}
+                   
+                    
+
                     <!-- Content Row -->
 
                     <div class="row">

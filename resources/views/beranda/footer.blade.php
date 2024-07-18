@@ -5,20 +5,20 @@
              <div class=" col-md-4">
                 <h3>Contact US</h3>
                 <ul class="conta">
-                   <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
-                   <li><i class="fa fa-mobile" aria-hidden="true"></i> +01 1234569540</li>
-                   <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
+                   {{-- <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
+                   <li><i class="fa fa-mobile" aria-hidden="true"></i> +01 1234569540</li> --}}
+                   <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> six-estates@gmail.com</a></li>
                 </ul>
              </div>
              <div class="col-md-4">
                 <h3>Menu Link</h3>
                 <ul class="link_menu">
                    <li class="active"><a href="#">Home</a></li>
-                   <li><a href="about.html"> about</a></li>
-                   <li><a href="room.html">Our Room</a></li>
-                   <li><a href="gallery.html">Gallery</a></li>
-                   <li><a href="blog.html">Blog</a></li>
-                   <li><a href="contact.html">Contact Us</a></li>
+                   {{-- <li><a href="about.html"> about</a></li> --}}
+                   <li><a href="#">Hotel</a></li>
+                   <li><a href="#">Galeri</a></li>
+                   <li><a href="#">Room</a></li>
+                   <li><a href="#">Contact Us</a></li>
                 </ul>
              </div>
              <div class="col-md-4">

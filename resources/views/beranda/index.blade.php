@@ -19,19 +19,19 @@
       @include('beranda.slider')
       <!-- end banner -->
       <!-- about -->
-      @include('beranda.about')
+      {{-- @include('beranda.about') --}}
       <!-- end about -->
       <!-- our_room -->
-      @include('beranda.hotel')
+      @include('beranda.blog')
       <!-- end our_room -->
       <!-- gallery -->
       <!-- end gallery -->
       @include('beranda.galeri')
       <!-- blog -->
-      @include('beranda.blog')
+      @include('beranda.hotel')
       <!-- end blog -->
       <!--  contact -->
-      @include('beranda.contact-us')
+      {{-- @include('beranda.contact-us') --}}
       <!-- end contact -->
       <!--  footer -->
       @include('beranda.footer')

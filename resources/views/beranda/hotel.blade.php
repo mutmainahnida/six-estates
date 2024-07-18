@@ -15,7 +15,7 @@
                    <figure><img src="images/room1.jpg" alt="#"/></figure>
                 </div>
                 <div class="bed_room">
-                   <h3>Bed Room</h3>
+                   <h3>Triple Room</h3>
                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                 </div>
              </div>
@@ -26,7 +26,7 @@
                    <figure><img src="images/room2.jpg" alt="#"/></figure>
                 </div>
                 <div class="bed_room">
-                   <h3>Bed Room</h3>
+                   <h3>Regular Room</h3>
                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                 </div>
              </div>
@@ -37,7 +37,7 @@
                    <figure><img src="images/room3.jpg" alt="#"/></figure>
                 </div>
                 <div class="bed_room">
-                   <h3>Bed Room</h3>
+                   <h3>Executive Room</h3>
                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                 </div>
              </div>
@@ -48,7 +48,7 @@
                    <figure><img src="images/room4.jpg" alt="#"/></figure>
                 </div>
                 <div class="bed_room">
-                   <h3>Bed Room</h3>
+                   <h3>Twin room</h3>
                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                 </div>
              </div>
@@ -59,7 +59,7 @@
                    <figure><img src="images/room5.jpg" alt="#"/></figure>
                 </div>
                 <div class="bed_room">
-                   <h3>Bed Room</h3>
+                   <h3>Suite</h3>
                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                 </div>
              </div>
@@ -70,7 +70,7 @@
                    <figure><img src="images/room6.jpg" alt="#"/></figure>
                 </div>
                 <div class="bed_room">
-                   <h3>Bed Room</h3>
+                   <h3>Deluxe</h3>
                    <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
                 </div>
              </div>
