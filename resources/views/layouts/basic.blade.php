@@ -492,7 +492,7 @@
                                 </div>
                             </div>
                         </div> --}}
-
+{{-- 
                         <!-- Pie Chart -->
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
@@ -504,7 +504,7 @@
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
+                                        </a> --}}
                                         {{-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
@@ -513,7 +513,7 @@
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#">Something else here</a>
                                         </div> --}}
-                                    </div>
+                                    {{-- </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -534,9 +534,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <!-- Content Row -->
+                    {{-- <!-- Content Row -->
                     <div class="row">
 
                         <!-- Content Column -->
@@ -579,8 +579,8 @@
                                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
-                            </div>
-
+                            </div> --}}
+{{-- 
                             <!-- Color System -->
                             <div class="row">
                                 <div class="col-lg-6 mb-4">
@@ -649,12 +649,12 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
 
-                        <div class="col-lg-6 mb-4">
+                        {{-- <div class="row">
 
                             <!-- Illustrations -->
-                            <div class="card shadow mb-4">
+                            <div class="card shadow mb-10">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
                                 </div>
@@ -685,8 +685,7 @@
                                         Bootstrap framework, especially the utility classes.</p>
                                 </div>
                             </div>
-
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -712,11 +711,11 @@
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    {{-- <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
-    </a>
+    </a> --}}
 
-    <!-- Logout Modal-->
+    {{-- <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -734,7 +733,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('/temp/vendor/jquery/jquery.min.js')}}"></script>
