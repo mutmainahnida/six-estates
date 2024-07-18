@@ -28,7 +28,7 @@
                 <td>{{ $kamar->kapasitas }} orang</td>
                 <td>{{ $kamar->deskripsi }}</td>
                 <td>
-                    <a href="{{ route('kamars.show', $kamar->id) }}" class="btn btn-info btn-sm">Detail</a>
+                    {{-- <a href="{{ route('kamars.show', $kamar->id) }}" class="btn btn-info btn-sm">Detail</a> --}}
                     <a href="{{ route('kamars.edit', $kamar->id) }}" class="btn btn-primary btn-sm">Edit</a>
                     <form action="{{ route('kamars.destroy', $kamar->id) }}" method="POST" style="display: inline;">
                         @csrf

@@ -36,7 +36,7 @@
                         <td>{{ number_format($booking->total_harga, 2, ',', '.') }}</td>
                         <td>{{ $booking->status }}</td>
                         <td>
-                            <a href="{{ route('bookings.show', $booking->id) }}" class="btn btn-info btn-sm">Detail</a>
+                            {{-- <a href="{{ route('bookings.show', $booking->id) }}" class="btn btn-info btn-sm">Detail</a> --}}
                             <a href="{{ route('bookings.edit', $booking->id) }}" class="btn btn-primary btn-sm">Edit</a>
                             <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST" style="display: inline;">
                                 @csrf

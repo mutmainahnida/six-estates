@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\AboutController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\KamarController;
@@ -23,6 +25,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+route::get('/dashboard', [DashboardController::class, 'indexPage']);
+route::get('/about', [AboutController::class, 'index']);
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 route::get('beranda', [UserController::class, 'beranda']);
